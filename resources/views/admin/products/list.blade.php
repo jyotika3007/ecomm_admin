@@ -34,7 +34,7 @@
         <tbody>
             @foreach($products as $product)
             <tr>
-                <td>{{ $product->id ?? '0' }}</td>
+                <td>{{ $count++ }}</td>
                 <td>{{ $product->name ?? ''  }}</td>
                 <td>{{ $product->category_name ?? '' }}</td>
                 <td>{{ $product->stock ?? '' }}</td>

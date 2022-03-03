@@ -18,12 +18,15 @@ class CategoryController extends Controller
     {
         // $categories = Category::orderBy('created_at','DESC')->get();
 
+
+
         $categories = DB::select("SELECT C1.*,C2.category_name as parent_name from categories as C1 LEFT JOIN categories as C2 ON C1.parent_id=C2.id order by C1.created_at");
 
         // dd($categories);
 
         return view('admin.categories.list',[
-            'categories' => $categories
+            'categories' => $categories,
+            'count' => 1
         ]);
     }
 
@@ -151,7 +154,8 @@ if(!isset($data['parent_id'])){
 
         return view('admin.category-product.list', [
 
-            'categories' => $categories
+            'categories' => $categories,
+            'count' => 1
         ]);
     }
 

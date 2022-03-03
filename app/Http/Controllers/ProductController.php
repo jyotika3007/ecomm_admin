@@ -20,7 +20,8 @@ class ProductController extends Controller
 
         // dd($products);
         return view('admin.products.list', [
-            'products'=> $products
+            'products'=> $products,
+            'count' => 1
         ]);
     }
 

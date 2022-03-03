@@ -27,7 +27,7 @@
         <tbody>
             @foreach($categories as $category)
             <tr>
-                <td>{{ $category->id ?? '0' }}</td>
+                <td>{{ $count++ }}</td>
                 <td>{{  $category->category_name ?? ''  }}</td>
                 <td>{{ $category->parent_name ?? '' }}</td>
                 <td>@if($category->cover_image != '')
